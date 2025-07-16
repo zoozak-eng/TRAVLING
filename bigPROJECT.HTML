@@ -1,0 +1,384 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>TRAVIL GIRLS</title>  
+    <style>  
+        body{  
+           background-color: #fff0f5;  }  
+    nav{  
+        text-align: center;  
+        background-color: #3a2a32;  
+         border: solid 5px #fc3398;  
+         
+    }  
+    nav a{  
+     color: #fc3398;  
+     margin: 15px;  
+     text-decoration: none;  
+     font-weight: bold;  
+     transition:color 0.3s,transform 0.3s;  
+       display: inline-block;   
+       font-size: 2em;  
+       border: dashed 3px #fc3398;  
+          
+    }  
+    nav a:hover{  
+       transform: scale(1.1);
+
+border-color:#fc3398;
+color: #ff69b4;
+}
+#home h1{
+color: #ff69b4;
+font-weight: bold;
+text-align: center;
+font-size: 3em;
+margin-top: 50px;
+text-shadow: 2px 2px 2px #fc3398;
+border-bottom: solid 2px #ff69b4;
+}
+#home p{
+font-size: 2em;
+color: #ff69b4;
+margin-top: 50px;
+font-weight: bold;
+text-align: center;
+}
+.imageo{
+display:flex;
+align-items: center;
+justify-content: center;
+gap: 20px;
+margin-top: 20px;
+}
+.imageo img{
+height: 209px;
+border-radius: 10px;
+}
+.imageo .TEXT {
+font-size:1.8em;
+color:#fc3398;
+font-weight:bold;
+border: double 3px #fc3398;
+}
+#gallery img{
+float: left;
+width: 300px;
+margin-right: 20px;
+height: 500px;
+gap:40px;
+}
+#gallery h2{
+color: #ff69b4;
+text-align: center;
+font-size: 2.5em;
+margin-bottom: 10px;
+margin-top: 30px;
+}
+#gallery p{
+text-align: center;
+font-size: 1.3em;
+margin-bottom: 10px;
+color: #555;
+margin-top: 20px;
+}
+#gallery nav{
+  margin-top: 120px;
+}
+.sawir{
+gap: 40px;
+
+}  
+.sawir img{  
+  margin: 70px;  
+  border-radius: 20px;  
+  margin-top :20px;   
+  transition:transform 0.3s ease;  
+ cursor:pointer;  
+}  
+   .sawir img:hover{  
+    transform: scale(1.1);  
+   }  
+
+
+   #about{
+   text-align: center;
+    background-color:#ff69b4;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(248, 246, 246);
+    margin-bottom: 100px;
+    margin-top: 600px;
+    content: unset;
+   }
+   
+   .aaa{
+    background-color: #fff0f5;
+    font-size: 2.5em;
+   
+   }
+   #BOOKING{
+    padding: 50px,20px;
+    background-color: #ff69b4;
+    text-align: center;
+   }
+   #BOOKING h1{
+    color: #ff1e8f;
+    margin-bottom: 20px;
+   }
+
+   #BOOKING form{
+    display: inline-block;
+    text-align: left;
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0,0,10px rgb(0,0,0,0.1);
+   }
+
+   #BOOKING label{
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+   }
+   
+   #BOOKING input{
+    width: 500px;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+   }
+
+   #HELP{
+  text-align: center;
+  margin-top: 100px;
+   }
+    #HELP h1{
+     color: #42353c;
+     font-size: 2.8em;
+     margin-bottom: 20px;
+    }
+     #HELP p{
+      font-size: 1.3em;
+      color: #3a2a32;
+      margin-bottom: 40px;
+     }
+
+      #HELP form{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+       #HELP label{
+        font-weight: bold;
+        color: #42353c;
+       }
+        #HELP input,
+        #HELP textarea{
+          padding: 10px;
+          border-radius: 8px;
+          border: 1px solid #ccc;
+          font-size: 1em;
+         }
+
+         #HELP button{
+          background-color: #fc3398;
+          color: white;
+          font-size: 1.2em;
+          padding: 10px;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          transition:background-color 0.3s ease;
+         }
+
+          #HELP button:hover{
+            background-color: #ff69b4;
+          }
+
+          .site-footer {
+  background-color: #3a2a32;
+  color: #fc3398;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1.1em;
+  margin-top: 50px;
+  border-top: 3px solid #fc3398;
+}
+
+.site-footer p {
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.contact-info {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.contact-info p {
+  font-size: 1.2em;
+  color: #3a2a32;
+  margin-bottom: 5px;
+}
+
+.contact-info a {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #fc3398;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #ff69b4;
+}
+</style>
+
+</head>  
+<body>  
+    <!-- Navigation Bar -->  
+        <nav>  
+          <a href="#home">HOME </a>   
+        <a href="#gallery">GALLERY</a>  
+        <a href="#about">ABOUT</a> 
+        <a href="#BOOKING">BOOKING</a>  
+         <a href="#HELP">HELP</a>  
+    </nav>
+
+ <!-- Sections --> 
+  
+     <section id="home">  
+      
+    <h1>>Welcome to Travel GIRLS 🎀  
+</h1>  
+    <p>We are here to make you happy with beautiful <br> and quiet trips that <br>  
+             you can enjoy as much as you want and however you want.</p>  
+             <div class="imageo">  
+<img src="C:\Users\pc\Downloads\WhatsApp Image 2025-07-02 at 17.04.24_c1ddb33a.jpg" alt="photo" height="200" width="300">  
+<div class="TEXT">JUST FOR GIRLS</div>  
+</div>   
+ </section>  
+ 
+ 
+ <section id="gallery">  
+   <nav>  
+          <a href="#home">HOME </a>   
+        <a href="#gallery">GALLERY</a>  
+        <a href="#about">ABOUT</a> 
+        <a href="#BOOKING">BOOKING</a>  
+         <a href="#HELP">HELP</a>  
+    </nav>
+    <h2>GALLERY</h2>  
+    <p>Destinations coming soon</p>  
+    <div class="sawir">  
+      
+<img src="C:\Users\pc\Downloads\WhatsApp Image 2025-07-01 at 21.32.15_d44f7842.jpg" alt="maldives" height="300">
+<img src="C:\Users\pc\Downloads\WhatsApp Image 2025-07-02 at 10.40.00_a3841ab4.jpg" alt="TURKIYA" height="500" width="300">
+<img src="C:\Users\pc\Downloads\WhatsApp Image 2025-07-02 at 15.30.53_b0de222f.jpg" alt="switthrlan" height="500" width="300"> 
+
+  <br><br>
+
+    </div>
+ 
+  </section> 
+  <br>
+  <br>
+ 
+  <section id="about">
+     <nav>  
+          <a href="#home">HOME </a>   
+        <a href="#gallery">GALLERY</a>  
+        <a href="#about">ABOUT</a> 
+        <a href="#BOOKING">BOOKING</a>  
+         <a href="#HELP">HELP</a>  
+    </nav>
+     <div class="aaa">
+   <h1>ABOUT TRAVELING</h1>
+  </div>
+<div class="first">
+<h2> TRAVELING MALDIVES</h2>
+<h3>11/11/2025</h3>
+<p>The Maldives is one of the world’s most stunning travel destinations,<br>
+     offering a wide variety of exciting and relaxing .</p>
+</div>
+<div class="second">
+    <h2>TRAVELING TURKIYA</h2>
+    <h3>12/12/2025</h3>
+<p>Türkiye is a land of rich culture, breathtaking landscapes, and endless adventures. Whether you're exploring the 
+    <br>vibrant streets of Istanbul,
+     floating above Cappadocia in a hot air balloon,<br>
+      or relaxing along the turquoise coast, there's something for everyone.</p>
+</div>
+<div class="theerd">
+    <h2> TRAVELING SWITZERLAND</h2>
+    <h3>1/1/2025</h3>
+    <p>Switzerland is a dream destination known for its snow-capped mountains, charming villages, and pristine lakes . <br> 
+        Whether you're visiting in summer or winter, the country offers unforgettable adventures and <br>
+        breathtaking scenery.</p>
+</div>
+  </section>
+<br><br>
+
+  <section id="BOOKING">
+     <nav>  
+          <a href="#home">HOME </a>   
+        <a href="#gallery">GALLERY</a>  
+        <a href="#about">ABOUT</a> 
+        <a href="#BOOKING">BOOKING</a>  
+         <a href="#HELP">HELP</a>  
+    </nav>
+    <h1>
+      BOOKING PAGE 
+    </h1>
+  <h3>
+    IF YOU WANT TO BOOK,<br> CAN YOU FIL OUT THE FORM 
+  </h3>
+  <form>
+<legend>BOOKING FORM</legend>
+  <label for="fname">Your name:</label><br>
+   <input type="text" name="fullname" id="fname" placeholder="enter your full name" required> <br>
+   <label for="mname"> Age:</label><br>
+   <input type="number" name="Age" id="Age" required placeholder="your age please"> <br>
+   <label for="email">E-mail:</label> <br>
+<input type="email" name="email" id="email"><br>
+   <label for="number"> Phone:</label> <br>
+<input type="tel" name="Phone" id="number" required placeholder="enter your number:" ><br> 
+  </form>
+  </section>
+
+  <section id="HELP">
+ <nav>  
+          <a href="#home">HOME </a>   
+        <a href="#gallery">GALLERY</a>  
+        <a href="#about">ABOUT</a> 
+        <a href="#BOOKING">BOOKING</a>  
+         <a href="#HELP">HELP</a>  
+    </nav>
+    <h2>HELP&SUPPORT</h2>
+    <p>If you need help with booking, or have questions about our trips <br> and destinations, 
+    feel free to reach out using the form below. <br> Our team is always ready to assist you 🎀.
+</p>
+<form>
+  <label for="help-name">your name:</label>
+  <input type="text" id="help-name" placeholder="Enter your name" required> 
+<label for="help-email">your email</label>
+<input type="email" id="help-email" name="help-email" placeholder="Enter your email" required>
+
+<label for="help-message">Message:</label>
+<textarea name="help-message" id="help-message" rows="5" placeholder="Type your Message..." required></textarea>
+<button type="submit">Send Message</button>
+</form>
+  </section>
+  <footer class="site-footer">
+<p>Made with 💖 by ZAMZAM Abdulaziz</p>
+<div class="contact-info">
+ <p>📞 For direct help, contact us at:</p>
+  <a href="https://wa.me/252613698038" target="_blank">+252 61 3698038 (WhatsApp)</a>
+</div>
+  </footer>
+</body>  
+</html>  
