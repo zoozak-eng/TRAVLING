@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documen</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+        padding: 20px;
+    }
+    h1{
+        color: #9b1006;
+        font-family: Arial,sans-serif;
+        padding: 20px;
+        text-align: center;
+
+    }
+    .container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h2 { text-align: center; color: #ff6905; }
+    h3 { color: #b93713; margin-top: 30px; }
+    .item { display: flex; justify-content: space-between; align-items: center; margin: 10px 0; }
+    select, input { margin-left: 10px; padding: 5px; border-radius: 5px; border: 1px solid #ccc; }
+    #summary { margin-top: 20px; padding: 15px; background-color: #ecf0f1; border-radius: 5px; }
+    button { background-color: #6d0b04; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; font-size: 1em; }
+    button:hover { background-color: #ae390b; }
+    .error { color: red; font-size: 0.85em; margin-left: 10px; }
+</style>
+</head>
+<body>
+    <h1>FAM RESTURANT</h1>
+
+<div class="container">
+    <h2>Place Your Order</h2>
+    
+    <div id="menu"></div>
+
+    <button id="placeOrder">Place Order</button>
+
+    <div id="summary"></div>
+</div>
+
+<script>
+    // items of the menue
+const menu = {
+    PIZZA: [
+        { name: "Classic Pizza", prices: { Large:16, Medium:8, Small:4 } },
+        { name: "Chicken Pizza", prices: { Large:16, Medium:8, Small:4 } },
+        { name: "Meat Pizza", prices: { Large:16, Medium:8, Small:4 } },
+        { name: "Special Pizza", prices: { Large:16, Medium:8, Small:4 } },
+    ],
+    BURGER: [
+        { name: "Special Burger", prices: { Single:3.5, Double:5 } },
+        { name: "Chicken Burger", prices: { Single:3.5, Double:5 } },
+        { name: "Meat Burger", prices: { Single:3.5, Double:5 } },
+        { name: "Fish Burger", prices: { Single:3.5, Double:5 } },
+    ],
+    FRISE: [
+        { name: "Frise with Chicken", prices: { Large:13, Medium:7, Small:3.5 } },
+        { name: "Frise with Meat", prices: { Large:13, Medium:7, Small:3.5 } },
+        { name: "Frise with Shrimp", prices: { Large:13, Medium:7, Small:3.5 } },
+    ],
+    SANDWICH: [
+        { name: "Sandwich Meat", prices: { Medium:5, Small:2.5 } },
+        { name: "Sandwich Chicken", prices: { Medium:5, Small:2.5 } },
+        { name: "Sandwich Fajita", prices: { Medium:5, Small:2.5 } },
+        { name: "Sandwich Veggie", prices: { Medium:5, Small:2.5 } },
+        { name: "Sandwich Mix", prices: { Medium:5, Small:2.5 } },
+        { name: "Sandwich Shrimp", prices: { Medium:5, Small:2.5 } },
+    ]
+};
+
+const menuDiv = document.getElementById("menu");
+
+// partsof the menu
+
+Object.keys(menu).forEach(category => {
+    const catTitle = document.createElement("h3");
+    catTitle.textContent = category;
+    menuDiv.appendChild(catTitle);
+
+    menu[category].forEach((item, index) => {
+        const div = document.createElement("div");
+        div.className = "item";
+
+        // select size
+        let sizeOptions = "";
+        Object.keys(item.prices).forEach(size => {
+            sizeOptions += `<option value="${size}">${size} - $${item.prices[size]}</option>`;
+        });
+
+        div.innerHTML = `
+            <span>${item.name}</span>
+            <select id="size-${category}-${index}">${sizeOptions}</select>
+            <input type="number" min="0" value="0" id="qty-${category}-${index}">
+            <span class="error" id="error-${category}-${index}"></span>
+        `;
+        menuDiv.appendChild(div);
+    });
+});
+
+//order butoon
+document.getElementById("placeOrder").addEventListener("click", function() {
+    let total = 0;
+    let orderDetails = "";
+    let valid = true;
+
+    Object.keys(menu).forEach(category => {
+        menu[category].forEach((item, index) => {
+            const qtyInput = document.getElementById(`qty-${category}-${index}`);
+            const sizeSelect = document.getElementById(`size-${category}-${index}`);
+            const errorSpan = document.getElementById(`error-${category}-${index}`);
+            const qty = parseInt(qtyInput.value);
+
+            if (isNaN(qty) || qty < 0) {
+                errorSpan.textContent = "Enter a valid number";
+                valid = false;
+            } else {
+                errorSpan.textContent = "";
+                if (qty > 0) {
+                    const size = sizeSelect.value;
+                    const price = item.prices[size] * qty;
+                    orderDetails += `${item.name} (${size}) x ${qty} = $${price.toFixed(2)}<br>`;
+                    total += price;
+                }
+            }
+        });
+    });
+
+ //sumarrey
+    const summaryDiv = document.getElementById("summary");
+    if (valid) {
+        if (total === 0) {
+            summaryDiv.innerHTML = "Please select at least one item.";
+        } else {
+            summaryDiv.innerHTML = `<h3>Order Summary:</h3>${orderDetails}<hr>Total: $${total.toFixed(2)}`;
+        }
+    } else {
+        summaryDiv.innerHTML = "";
+    }
+});
+</script>
+</body>
+</html>
